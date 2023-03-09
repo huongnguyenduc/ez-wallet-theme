@@ -1,0 +1,16 @@
+<article class="flex flex-col gap-2">
+    <a href="{{url}}" class="font-semibold text-neutral-90 text-lg hover:text-neutral-800">{{title}}</a>
+    <div class="text-sm text-neutral-80 flex gap-1">
+        <span>By <a href="{{primary_author.url}}">{{primary_author.name}}</a></span> |
+        <time>{{date format="MMM DD, YYYY"}}</time>
+        <!--        <span-->
+        <!--            class="bull">&bull;</span> {{reading_time}}-->
+    </div>
+    <a href="{{url}}"
+       class="cursor-pointer group flex gap-2 text-accent-green-100 font-semibold items-center hover:text-primary-green-600">
+        {{t "Read more"}}
+        <div class="group-hover:translate-x-1 transition">
+            {{> "icons/arrow-line-right"}}
+        </div>
+    </a>
+</article>

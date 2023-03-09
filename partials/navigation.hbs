@@ -1,0 +1,49 @@
+{{#if isSecondary}}
+    <!--    Need to update the grid-cols-[Column number]-->
+    <ul class="nav grid grid-cols-3 gap-6 xl:gap-14" role="menu">
+        <!--        Column 1-->
+        <li role="menuitem" class="flex flex-col justify-start gap-y-4">
+            <h6 class="text-base font-bold text-neutral-900 dark:text-neutral-100 lg:text-lg">{{t
+                "Column 1"}}</h6>
+            {{#foreach navigation limit="3"}}
+                <a href="{{url}}"
+                   class="nav-{{slug}} text-neutral-80 hover:text-primary-green-600 dark:hover:text-primary-green-600 w-fit text-sm dark:text-neutral-300 md:text-base lg:text-lg">
+                    {{label}}
+                </a>
+            {{/foreach}}
+        </li>
+        <!--        Column 2-->
+        <li role="menuitem" class="flex flex-col justify-start gap-y-4">
+            <h6 class="text-base font-bold text-neutral-900 dark:text-neutral-100 lg:text-lg">{{t
+                "Column 2"}}</h6>
+            {{#foreach navigation limit="4" from="3"}}
+                <a href="{{url}}"
+                   class="nav-{{slug}} text-neutral-80 hover:text-primary-green-600 dark:hover:text-primary-green-600 w-fit text-sm dark:text-neutral-300 md:text-base lg:text-lg">
+                    {{label}}
+                </a>
+            {{/foreach}}
+        </li>
+        <!--        Column 3-->
+        <li role="menuitem" class="flex flex-col justify-start gap-y-4">
+            <h6 class="text-base font-bold text-neutral-900 dark:text-neutral-100 lg:text-lg">{{t
+                "Column 3"}}</h6>
+            {{#foreach navigation limit="4" from="7"}}
+                <a href="{{url}}"
+                   class="nav-{{slug}} text-neutral-80 hover:text-primary-green-600 dark:hover:text-primary-green-600 w-fit text-sm dark:text-neutral-300 md:text-base lg:text-lg">
+                    {{label}}
+                </a>
+            {{/foreach}}
+    </ul>
+{{else}}
+    <ul class="nav gap-12.5 flex items-center justify-between {{class}}" role="menu">
+        {{#foreach navigation}}
+            <li class="{{link_class for=(url) class=(concat "nav-" slug)}}" role="menuitem">
+                <a href="{{url absolute="true"}}"
+                   class="text-lg font-bold capitalize {{#if
+                       current}}text-accent-green-100 hover:text-primary-green-200{{else}}hover:text-accent-green-100 dark:hover:text-accent-green-100 text-neutral-900 dark:text-neutral-100{{/if}}">
+                    {{label}}
+                </a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{/if}}

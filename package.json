@@ -1,0 +1,148 @@
+{
+    "name": "ez-wallet",
+    "description": "A custom theme for EZ Wallet",
+    "demo": "https://blog.ezwallet.xyz",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=4.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg"
+    },
+    "scripts": {
+        "dev": "gulp",
+        "zip": "gulp zip",
+        "test": "gscan .",
+        "test:ci": "gscan --fatal --verbose .",
+        "pretest": "gulp build",
+        "preship": "yarn test",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
+    },
+    "author": {
+        "name": "Huong Nguyen",
+        "email": "duchuong007@gmail.com",
+        "url": "https://github.com/huongnguyenduc"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TryGhost/Starter.git"
+    },
+    "bugs": "https://github.com/TryGhost/Starter/issues",
+    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
+    "devDependencies": {
+        "@tailwindcss/line-clamp": "^0.4.2",
+        "@tailwindcss/typography": "^0.5.9",
+        "autoprefixer": "10.4.13",
+        "beeper": "2.1.0",
+        "cssnano": "5.1.14",
+        "gscan": "4.36.0",
+        "gulp": "4.0.2",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "9.0.1",
+        "gulp-sourcemaps": "3.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-util": "3.0.8",
+        "gulp-watch": "5.0.1",
+        "gulp-zip": "5.1.0",
+        "postcss": "8.4.21",
+        "postcss-color-mod-function": "3.0.3",
+        "postcss-easy-import": "4.0.0",
+        "tailwindcss": "^3.2.7"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "config": {
+        "card_assets": true,
+        "posts_per_page": 6,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1200
+            },
+            "xl": {
+                "width": 2000
+            }
+        },
+        "custom": {
+            "welcome": {
+                "type": "text",
+                "default": "Our Blog"
+            },
+            "doc_welcome": {
+                "type": "text",
+                "default": "Documentation"
+            },
+            "career": {
+                "type": "text",
+                "default": "Find your dream job"
+            },
+            "discord": {
+                "type": "text"
+            },
+            "medium": {
+                "type": "text"
+            },
+            "email": {
+                "type": "text"
+            },
+            "section_1_title": {
+                "type": "text",
+                "default": "What is it for you?"
+            },
+            "section_1_description": {
+                "type": "text",
+                "default": "We highly value integrity and appreciate every individual's perspective. We’d declare mutual beneficial partnership with to grow and tailor right products to the requirements of the users."
+            },
+            "section_2_title": {
+                "type": "text",
+                "default": "Become an Enthusiast Ambassador"
+            },
+            "section_2_description": {
+                "type": "text",
+                "default": "EZ Wallet Advocates program appears for the first time since March 2022 to bring the community’s best members to the core team and contribute to EZ Wallet’s growth."
+            },
+            "section_2_image_1": {
+                "type": "image"
+            },
+            "section_2_image_2": {
+                "type": "image"
+            },
+            "section_3_title": {
+                "type": "text",
+                "default": "Join the EZ partner program"
+            },
+            "section_3_description": {
+                "type": "text",
+                "default": "Given the power of a project with critical success factors, we are confident that we can make sense of things. Drop a line if there is a demand for investing in or marketing, or developing projects."
+            },
+            "section_3_image": {
+                "type": "image"
+            }
+        }
+    }
+}

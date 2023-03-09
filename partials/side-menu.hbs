@@ -1,0 +1,25 @@
+<aside id="side-menu" class="off-canvas flex flex-col gap-4">
+
+    {{#if @site.navigation}}
+        <div class="flex flex-col justify-between h-full flex-1 gap-4">
+            {{navigation class="flex-col gap-6"}}
+            {{#if @site.members_enabled}}
+                {{#unless @member}}
+                    <button
+                        class="py-3.5 px-6 rounded-full bg-primary-green-500 font-bold text-neutral-900 drop-shadow-xl hover:bg-primary-green-300"
+                        data-portal="signup">{{t
+                        "Join Waitlist"}}</button>
+                {{/unless}}
+            {{/if}}
+        </div>
+    {{/if}}
+
+    <button class="gh-search gh-icon-btn" data-ghost-search>{{> "icons/search"}}</button>
+
+    <div class="canvas-close">
+        {{> "icons/close"}}
+    </div>
+
+</aside>
+
+<div class="dimmer"></div>

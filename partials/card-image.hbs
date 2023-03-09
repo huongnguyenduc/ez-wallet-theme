@@ -1,0 +1,40 @@
+{{!--
+Re-usable card for linking to posts
+--}}
+
+<article
+    class="hover:shadow-card-hover active:shadow-card-pressed rounded-3xl transition duration-300 flex-col {{post_class}}">
+    <a class="flex gap-4 flex-col"
+       href="{{url}}">
+        {{#if feature_image}}
+            <div class="relative overflow-hidden rounded-3xl">
+                <img
+                    class="aspect-[360/200] w-full rounded-3xl bg-neutral-400 object-cover object-center transition duration-300 hover:scale-105"
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(max-width: 1000px) 400px, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                />
+                {{#if featured}}
+                    <div
+                        class="text-sm px-3 py-2 bg-accent-yellow-25 text-neutral-90 absolute top-4 left-4 rounded-full font-semibold">
+                        {{t "Featured"}}
+                    </div>
+                {{/if}}
+                <div
+                    class="absolute bottom-0 left-0 right-0 px-4 py-5 bg-gradient-to-t from-neutral-90 to-white/0 mt-3 space-y-3">
+                    <h2 class="line-clamp-2 hover:text-neutral-300 font-bold text-neutral-100 text-md md:text-lg lg:text-xl">{{title}}</h2>
+                    <div class="text-sm text-neutral-30 flex gap-1">
+                        <span>By <a href="{{primary_author.url}}">{{primary_author.name}}</a></span> |
+                        <time>{{date format="MMM DD, YYYY"}}</time>
+                        <!--                        <span-->
+                        <!--                            class="bull">&bull;</span> {{reading_time}}-->
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+    </a>
+</article>

@@ -1,0 +1,30 @@
+{{!--
+Re-usable card for linking to posts
+--}}
+
+<article>
+    <a class="hover:shadow-card-hover active:shadow-card-pressed flex gap-4 rounded-xl transition duration-300 pb-7.5 dark:bg-neutral-90 flex-col bg-neutral-100 p-4 {{post_class}}"
+       href="{{url}}">
+        {{#if feature_image}}
+            <img
+                class="aspect-[352/202] w-full rounded-xl rounded-xl bg-neutral-400 object-cover object-center transition duration-300 hover:scale-105"
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(max-width: 1000px) 400px, 700px"
+                src="{{img_url feature_image size="m"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+            />
+        {{/if}}
+        <div class="space-y-2">
+            <span class="text-sm font-medium text-neutral-700 lg:text-base">
+                <time
+                    datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                <span
+                    class="bull">&bull;</span> {{reading_time}}</span>
+            <h2 class="line-clamp-2 hover:text-neutral-80 font-bold dark:hover:text-neutral-200">{{title}}</h2>
+            <p class="line-clamp-3 text-sm text-neutral-800 dark:text-neutral-700 lg:text-base">{{excerpt}}</p>
+        </div>
+    </a>
+</article>

@@ -1,0 +1,74 @@
+{{!< default}}
+
+<div class="container mx-auto relative">
+    {{#if @site.cover_image}}
+        <img class="site-header-cover w-full"
+             src="{{@site.cover_image}}"
+             alt="{{@site.title}}"
+        />
+    {{/if}}
+
+    <div class="absolute left-1/2 top-1/2 -translate-y-1/4">
+        <h1 class="site-title line-clamp-2 hover:text-neutral-80 font-bold dark:hover:text-neutral-200 text-3xl md:text-4xl lg:text-6xl">{{@site.title}}</h1>
+        {{#if @site.description}}
+            <p class="site-description mt-12 text-neutral-80">{{@site.description}}</p>
+        {{/if}}
+    </div>
+</div>
+
+<!--Section 1-->
+{{#if @custom.section_1_title}}
+    <div class="bg-gradient-3 py-24 mt-24">
+        <div class="container space-y-16">
+            <div class="flex flex-col items-center justify-center gap-6">
+                <h2 class="text-2xl font-bold text-accent-green-100 sm:text-3xl md:text-4xl lg:text-5xl">{{@custom.section_1_title}}</h2>
+                <p class="text-neutral-80 text-lg max-w-4xl text-center">{{@custom.section_1_description}}</p>
+            </div>
+        </div>
+    </div>
+{{/if}}
+<!--Section 2-->
+{{#if @custom.section_2_title}}
+    <div class="bg-primary-green-75 relative">
+        <div class="grid grid-cols-3 container mx-auto pt-24 xl:pb-52 pb-24">
+            <div class="flex flex-col gap-6 col-span-3 xl:col-span-2 items-center xl:items-start">
+                <h2 class="text-3xl font-bold text-neutral-100 sm:text-4xl md:text-5xl lg:text-6xl text-center xl:text-start">{{@custom.section_2_title}}</h2>
+                <p class="text-neutral-100 text-lg max-w-xl text-center xl:text-start">{{@custom.section_2_description}}</p>
+            </div>
+        </div>
+        {{#if @custom.section_2_image_1}}
+            <img class="site-header-cover xl:absolute right-0 top-0 xl:h-full xl:w-fit w-full"
+                 srcset="{{img_url @custom.section_2_image_1 size="s"}} 300w,
+                    {{img_url @custom.section_2_image_1 size="m"}} 600w,
+                    {{img_url @custom.section_2_image_1 size="l"}} 1000w"
+                 sizes="(max-width: 500px) 400px, 600px"
+                 src="{{img_url @custom.section_2_image_1 size="m"}}"
+                 alt="{{@custom.section_2_title}}"
+            />
+        {{/if}}
+    </div>
+{{/if}}
+{{#if @custom.section_2_image_2}}
+    <img class="site-header-cover w-full"
+         src="{{@custom.section_2_image_2}}"
+         alt="{{@custom.section_2_title}}"
+    />
+{{/if}}
+{{#if @custom.section_3_title}}
+    <div class="grid grid-cols-1 xl:grid-cols-2 container mx-auto pt-40 pb-52 gap-7">
+        <div class="flex flex-col gap-7 items-center xl:items-start">
+            <h2 class="text-3xl font-bold text-neutral-90 sm:text-4xl md:text-5xl lg:text-6xl text-center xl:text-start">{{@custom.section_3_title}}</h2>
+            <p class="text-neutral-90 text-lg max-w-xl text-center xl:text-start">{{@custom.section_3_description}}</p>
+        </div>
+        {{#if @custom.section_3_image}}
+            <img class="site-header-cover h-full w-full"
+                 srcset="{{img_url @custom.section_3_image size="s"}} 300w,
+                    {{img_url @custom.section_3_image size="m"}} 600w,
+                    {{img_url @custom.section_3_image size="l"}} 1000w"
+                 sizes="(max-width: 500px) 400px, 600px"
+                 src="{{img_url @custom.section_3_image size="m"}}"
+                 alt="{{@custom.section_3_title}}"
+            />
+        {{/if}}
+    </div>
+{{/if}}

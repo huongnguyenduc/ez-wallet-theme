@@ -1,0 +1,69 @@
+{{!< default}}
+
+<div class="gh-page">
+    <div class="gh-container">
+        <div class="container">
+            <div
+                class='bg-gradient-2 h-24 w-full rounded-2xl md:h-28 xl:h-32 flex items-center gap-8 px-6 py-8'
+            >
+                <div
+                    class="flex-1 w-full text-3xl font-bold text-neutral-100 dark:text-neutral-100 sm:text-4xl md:text-5xl lg:text-6xl">{{@custom.welcome}}</div>
+                <div class="sm:flex-1 bg-gradient-2 rounded-full p-1 cursor-pointer" data-ghost-search>
+                    <div class="bg-neutral-100 flex items-center justify-between px-6 py-4 rounded-full">
+                        <span class="text-accent-green-100 text-xl font-bold hidden sm:block">
+                            {{t "Search article"}}
+                        </span>
+                        {{> "icons/search-normal"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:mt-15 container mt-5 grid gap-6 sm:mt-8 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 lg:grid-rows-2">
+            {{#get "posts" filter="featured:true" limit="3" include="authors" as |posts|}}
+                {{#foreach posts}}
+                    {{> "card-detail" isFirst=@first }} {{!-- partials/card-detail.hbs --}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+        <hr class="w-full border border-neutral-30 md:mt-15 mt-5 sm:mt-8 container"/>
+
+        <h2 class="font-bold text-2xl lg:text-3xl my-7.5 container text-neutral-90">{{t "Discover more"}}</h2>
+
+        <div class="container flex gap-5">
+            <a
+                href="/blog"
+                class="px-7 py-2 text-lg text-neutral-90 bg-neutral-30 rounded-3xl">{{t
+                "All"}}</a>
+            <div
+                class="px-7 py-2 text-lg text-neutral-90 bg-primary-green-75 rounded-3xl font-semibold cursor-default">{{t
+                "Featured"}}</div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-5 container mt-7.5">
+            <div
+                id="item-container"
+                class=".gh-postfeed grid lg:gap-6 grid-cols-2 gap-4 col-span-3 lg:col-span-2">
+                {{#foreach posts}}
+
+                    <div class="col-span-2 lg:col-span-1">
+
+                        {{> "card-image"}} {{!-- partials/card-image.hbs --}}
+
+                    </div>
+
+                {{/foreach}}
+                {{#if pagination}}
+                    <div
+                        class="flex items-center justify-center lg:mt-10 mt-8 col-span-3 lg:col-span-2">{{pagination}}</div>
+                {{/if}}
+            </div>
+            <div class="col-span-3 lg:col-span-1 lg:row-span-2">
+                {{#get "posts" limit="5" include="authors" as |posts|}}
+                    {{> "other-article"}} {{!-- partials/other-article.hbs --}}
+                {{/get}}
+            </div>
+        </div>
+    </div>
+</div>

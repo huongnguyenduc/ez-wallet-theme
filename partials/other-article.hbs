@@ -1,0 +1,9 @@
+<aside class="p-7.5 bg-neutral-30 rounded-3xl">
+    <h3 class="font-semibold text-2xl text-neutral-90 mb-7.5">{{t "Other article"}}</h3>
+    {{#foreach posts}}
+        {{> "card-simple" }} {{!-- partials/card-simple.hbs --}}
+        {{#unless @last}}
+            <hr class="border border-neutral-400 my-5 w-full"/>
+        {{/unless }}
+    {{/foreach}}
+</aside>

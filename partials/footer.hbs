@@ -1,0 +1,63 @@
+<footer
+    class="dark:bg-neutral-70 bg-gradient-2 lg:pt-26.5 mx-auto pt-10 pb-4 lg:pb-6">
+    <div class="flex container flex-col items-center justify-between gap-8 pb-9 lg:flex-row lg:items-start lg:pb-24">
+        <div class="flex flex-col items-center gap-y-3 lg:items-start">
+            {{#if @site.icon}}
+                <img src="{{@site.icon}}" alt="{{@site.title}}"/>
+            {{/if}}
+            <h6 class="text-2xl font-bold text-neutral-900 dark:text-neutral-100">{{@site.title}}</h6>
+            {{#if @custom.email}}
+                <p class="text-lg font-medium text-neutral-900 dark:text-neutral-100">{{@custom.email}}</p>
+            {{/if}}
+        </div>
+
+        <hr class="w-full border-t-2 border-dashed border-neutral-400 lg:hidden"/>
+
+        <nav>
+            {{navigation type="secondary"}}
+        </nav>
+
+        <div class="mt-4 lg:mt-0">
+            <h6 class="mb-4 text-center text-lg font-bold text-neutral-900 dark:text-neutral-100 lg:text-left">
+                Join the community
+            </h6>
+            <div class="flex gap-x-11">
+                {{#if @custom.discord}}
+                    <a class="group flex flex-col items-center justify-between text-neutral-900 hover:text-neutral-800 dark:text-neutral-100 dark:hover:text-neutral-400"
+                       href="{{@custom.discord}}" target="_blank"
+                       rel="noopener">
+                        {{> "icons/discord" class="w-10 transition-all duration-300 group-hover:scale-110 lg:w-16"}}
+                        <div class="text-sm font-bold">{{t "Discord"}}</div>
+                    </a>
+                {{/if}}
+                {{#if @site.twitter}}
+                    <a class="group flex flex-col items-center justify-between text-neutral-900 hover:text-neutral-800 dark:text-neutral-100 dark:hover:text-neutral-400"
+                       href="{{@site.twitter}}" target="_blank"
+                       rel="noopener">
+                        {{> "icons/twitter" class="w-10 transition-all duration-300 group-hover:scale-110 lg:w-16"}}
+                        <div class="text-sm font-bold">{{t "Twitter"}}</div>
+                    </a>
+                {{/if}}
+                {{#if @custom.medium}}
+                    <a class="group flex flex-col items-center justify-between text-neutral-900 hover:text-neutral-800 dark:text-neutral-100 dark:hover:text-neutral-400"
+                       href="{{@custom.medium}}" target="_blank"
+                       rel="noopener">
+                        {{> "icons/medium" class="w-10 transition-all duration-300 group-hover:scale-110 lg:w-16"}}
+                        <div class="text-sm font-bold">{{t "Medium"}}</div>
+                    </a>
+                {{/if}}
+                {{#if @site.facebook}}
+                    <a class="group flex flex-col items-center justify-between text-neutral-900 hover:text-neutral-800 dark:text-neutral-100 dark:hover:text-neutral-400"
+                       href="{{@site.facebook}}" target="_blank"
+                       rel="noopener">
+                        {{> "icons/facebook" class="w-10 transition-all duration-300 group-hover:scale-110 lg:w-16"}}
+                        <div class="text-sm font-bold">{{t "Facebook"}}</div>
+                    </a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    <div class="text-center text-sm text-black dark:text-neutral-100">
+        © {{date format="YYYY"}} {{@site.title}} - All rights reserved
+    </div>
+</footer>

@@ -1,0 +1,40 @@
+{{!< default}}
+
+<div class="gh-page">
+    <div class="gh-container">
+        <div class="container">
+            <div
+                class='bg-gradient-2 h-24 w-full rounded-2xl md:h-28 xl:h-32 flex items-center gap-8 px-6 py-8'
+            >
+                <div
+                    class="flex-1 w-full text-3xl font-bold text-neutral-100 dark:text-neutral-100 sm:text-4xl md:text-5xl lg:text-6xl">{{@custom.career}}</div>
+                <div class="sm:flex-1 bg-gradient-2 rounded-full p-1 cursor-pointer" data-ghost-search>
+                    <div class="bg-neutral-100 flex items-center justify-between px-6 py-4 rounded-full">
+                        <span class="text-accent-green-100 text-xl font-bold hidden sm:block">
+                            {{t "Search job"}}
+                        </span>
+                        {{> "icons/search-normal"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="w-full border border-neutral-30 md:mt-15 mt-5 sm:mt-8 container"/>
+
+        <div class="container mt-7.5">
+            <div
+                id="item-container"
+                class=".gh-postfeed grid lg:gap-6 grid-cols-3 gap-4">
+                {{#foreach posts}}
+                    <div class="col-span-2 lg:col-span-1">
+                        {{> "card-job"}} {{!-- partials/card-job.hbs --}}
+                    </div>
+                {{/foreach}}
+                {{#if pagination}}
+                    <div
+                        class="flex items-center justify-center lg:mt-10 mt-8 col-span-3">{{pagination}}</div>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

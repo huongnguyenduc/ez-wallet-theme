@@ -1,0 +1,19 @@
+<nav id="pagination" class="pagination flex items-center justify-center gap-3">
+    <div
+        data-page="{{prev}}"
+        class="older-posts border border-neutral-40 rounded-full px-8 py-1.5 font-semibold text-sm {{#if
+            prev}}text-neutral-default cursor-pointer hover:border-primary-green-600{{else}}text-neutral-40 cursor-default{{/if}}">{{t
+        "Next"}}</div>
+    <div
+        data-page="{{next}}"
+        class="newer-posts border border-neutral-40 rounded-full px-8 py-1.5 font-semibold text-sm {{#if
+            next}}text-neutral-default cursor-pointer hover:border-primary-green-600{{else}}text-neutral-40{{/if}}">{{t
+        "Prev"}}</div>
+    <ul class="flex gap-2 items-center">
+        <!--        <li><a-->
+        <!--            class="h-8 w-8 flex items-center justify-center rounded-full font-semibold text-sm bg-primary-green-75 text-neutral-100"-->
+        <!--            href="#" data-page="1">1</a></li>-->
+        <!--        <li><a href="#" data-page="2">2</a></li>-->
+        <!--        <li><a href="#" data-page="3">3</a></li>-->
+    </ul>
+</nav>
